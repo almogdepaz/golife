@@ -46,7 +46,7 @@ func (l *Life) String() string {
 			}
 		}
 	}
-	return str
+	return str[:len(str)-1]
 }
 
 func Next(f *Field, x, y int) bool {
