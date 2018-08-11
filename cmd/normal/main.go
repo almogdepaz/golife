@@ -9,16 +9,6 @@ import (
 	"ras-robotics.com/golife"
 )
 
-func NextV2(f *golife.Field, x, y int) bool {
-	if f.Alive(x, y) && !f.Alive(x+1, y) && !f.Alive(x-1, y) && !f.Alive(x, y+1) && !f.Alive(x, y-1) {
-		return false
-	}
-	if f.CountLiveNeighbors(x, y) == 1 {
-		return true
-	}
-	return f.Alive(x, y)
-}
-
 func main() {
 	flag.Parse()
 	argsWithoutProg := os.Args[1:]
