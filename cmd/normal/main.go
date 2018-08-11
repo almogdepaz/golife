@@ -24,8 +24,8 @@ func main() {
 	argsWithoutProg := os.Args[1:]
 	w, _ := strconv.Atoi(argsWithoutProg[0])
 	h, _ := strconv.Atoi(argsWithoutProg[1])
-	maxGen, _ := strconv.Atoi(argsWithoutProg[3])
-	seed := strings.Split(argsWithoutProg[4], " ")
+	maxGen, _ := strconv.Atoi(argsWithoutProg[2])
+	seed := strings.Split(argsWithoutProg[3], " ")
 	if len(seed) != w*h {
 		fmt.Println("bad arguments")
 		return
