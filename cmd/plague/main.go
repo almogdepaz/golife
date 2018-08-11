@@ -9,7 +9,6 @@ import (
 	"ras-robotics.com/golife"
 )
 
-
 func main() {
 	flag.Parse()
 	argsWithoutProg := os.Args[1:]
@@ -37,7 +36,7 @@ func main() {
 		l.Step()
 		fmt.Println(l)
 	}
-	l.SetNextFunc(NextV2)
+	l.SetNextFunc(golife.NextV2)
 	for i := infect; i < maxGen; i++ {
 		l.Step()
 		fmt.Println(l)
