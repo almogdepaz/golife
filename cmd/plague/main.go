@@ -9,18 +9,6 @@ import (
 	"ras-robotics.com/golife"
 )
 
-func NextV2(f *golife.Field, x, y int) bool {
-	//if cell is alive and ha no living horizontal neighbors return false
-	if f.Alive(x, y) && !f.Alive(x+1, y) && !f.Alive(x-1, y) && !f.Alive(x, y+1) && !f.Alive(x, y-1) {
-		return false
-	}
-	//if cell is dead but has exactly one living neighbor return true
-	if !f.Alive(x, y) && f.CountLiveNeighbors(x, y) == 1 {
-		return true
-	}
-	//state remains the same
-	return f.Alive(x, y)
-}
 
 func main() {
 	flag.Parse()
