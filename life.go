@@ -1,5 +1,7 @@
 package golife
 
+import "math/rand"
+
 // Life stores the state of a round of Conway's Game of Life.
 type Life struct {
 	a, b *Field
@@ -16,6 +18,18 @@ func NewLife(w, h int, seed []bool, next func(f *Field, x, y int) bool) *Life {
 		}
 	}
 	return &Life{a: a, b: NewField(w, h), w: w, h: h, next: next,}
+}
+
+// NewLifeRandSeed returns a new Life game state with a random initial state.
+func NewLifeRandSeed(w, h int, next func(f *Field, x, y int) bool) *Life {
+	a := NewField(w, h)
+	for i := 0; i < (w * h / 4); i++ {
+		a.Set(rand.Intn(w), rand.Intn(h), true)
+	}
+	return &Life{
+		a: a, b: NewField(w, h),
+		w: w, h: h, next: next,
+	}
 }
 
 //Sets the inner logic of updating a cell state
