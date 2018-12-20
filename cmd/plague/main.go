@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
+	"golife"
 	"strconv"
-	"ras-robotics.com/golife"
 )
 
 func main() {
